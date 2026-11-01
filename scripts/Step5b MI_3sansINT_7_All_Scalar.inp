@@ -1,0 +1,312 @@
+TITLE:      3-factor MI Scalar on CES-D for All;
+
+DATA:       FILE IS Data4Mplus.csv;
+
+VARIABLE:   NAMES ARE cesd1-cesd20 grp;
+            USEVARIABLES cesd1-cesd6 cesd8-cesd14 cesd16-cesd18 cesd20;
+            MISSING ARE ALL (999);
+
+            CATEGORICAL ARE cesd1-cesd20; 
+
+            GROUPING IS grp (1 = AsnAm 2 = AsnNa 3 = Euro); 
+
+ANALYSIS:   ESTIMATOR = WLSMV; 
+            PARAMETERIZATION=THETA;
+
+MODEL:      dep BY cesd3@1 
+                   cesd6 (f106) 
+                   cesd9 (f109) 
+                   cesd10 (f110) 
+                   cesd14 (f114)
+                   cesd17 (f117)
+                   cesd18 (f118);
+            pa BY  cesd4@1 
+                   cesd8  (f208)
+                   cesd12 (f212)
+                   cesd16 (f21);
+            som BY cesd1@1 
+                   cesd2 (f302)
+                   cesd5 (f305)
+!                   cesd7 (f307)
+                   cesd11 (f311)
+                   cesd13 (f313)
+                   cesd20 (f320);
+!            int BY cesd15@1 
+!                   cesd19 (f419);
+
+
+
+              [cesd1$1] (t1);
+              [cesd1$2] (t2);
+              [cesd1$3] (t3);
+              [cesd2$1] (t4);
+              [cesd2$2] (t5); 
+              [cesd2$3] (t6);
+              [cesd3$1] (t7);
+              [cesd3$2] (t8);
+              [cesd3$3] (t9);
+              [cesd4$1] (t10);
+              [cesd4$2] (t11);
+              [cesd4$3] (t12);
+              [cesd5$1] (t13);
+              [cesd5$2] (t14); 
+              [cesd5$3] (t15);
+              [cesd6$1] (t16);
+              [cesd6$2] (t17); 
+              [cesd6$3] (t18);
+!              [cesd7$1] (t19);
+!              [cesd7$2] (t20); 
+!              [cesd7$3] (t21);
+              [cesd8$1] (t22);
+              [cesd8$2] (t23); 
+              [cesd8$3] (t24);
+              [cesd9$1] (t25);
+              [cesd9$2] (t26); 
+              [cesd9$3] (t27);
+              [cesd10$1] (t28);
+              [cesd10$2] (t29); 
+              [cesd10$3] (t30);
+              [cesd11$1] (t31);
+              [cesd11$2] (t32); 
+              [cesd11$3] (t33);
+              [cesd12$1] (t34);
+              [cesd12$2] (t35); 
+              [cesd12$3] (t36);
+              [cesd13$1] (t37);
+              [cesd13$2] (t38); 
+              [cesd13$3] (t39);
+              [cesd14$1] (t40);
+              [cesd14$2] (t41); 
+              [cesd14$3] (t42);
+!              [cesd15$1] (t43);
+!              [cesd15$2] (t44);
+!              [cesd15$3] (t45);
+              [cesd16$1] (t46);
+              [cesd16$2] (t47); 
+              [cesd16$3] (t48);
+              [cesd17$1] (t49);
+              [cesd17$2] (t50); 
+              [cesd18$1] (t51);
+              [cesd18$2] (t52); 
+              [cesd18$3] (t53);
+!              [cesd19$1] (t54);
+!              [cesd19$2] (t55); 
+!              [cesd19$3] (t56);
+              [cesd20$1] (t57);
+              [cesd20$2] (t58);
+              [cesd20$3] (t59);
+
+
+            cesd1-cesd6@1;
+            cesd8-cesd14@1;
+            cesd16-cesd18@1;
+            cesd20@1;
+            
+            [dep@0];
+!            dep@1;
+            [pa@0];
+!            pa@1;
+            [som@0];
+!            som@1;
+!            [int@0];
+!            int@1;
+
+
+MODEL AsnNa:            
+            dep BY cesd3@1 
+                   cesd6 (f106) 
+                   cesd9 (f109) 
+                   cesd10 (f110) 
+                   cesd14 (f114)
+                   cesd17 (f117)
+                   cesd18 (f118);
+            pa BY  cesd4@1 
+                   cesd8  (f208)
+                   cesd12 (f212)
+                   cesd16 (f21);
+            som BY cesd1@1 
+                   cesd2 (f302)
+                   cesd5 (f305)
+ !                  cesd7 (f307)
+                   cesd11 (f311)
+                   cesd13 (f313)
+                   cesd20 (f320);
+ !           int BY cesd15@1 
+ !                  cesd19 (f419);
+
+
+
+               [cesd1$1] (t1);
+              [cesd1$2] (t2);
+              [cesd1$3] (t3);
+              [cesd2$1] (t4);
+              [cesd2$2] (t5); 
+              [cesd2$3] (t6);
+              [cesd3$1] (t7);
+              [cesd3$2] (t8);
+              [cesd3$3] (t9);
+              [cesd4$1] (t10);
+              [cesd4$2] (t11);
+              [cesd4$3] (t12);
+              [cesd5$1] (t13);
+              [cesd5$2] (t14); 
+              [cesd5$3] (t15);
+              [cesd6$1] (t16);
+              [cesd6$2] (t17); 
+              [cesd6$3] (t18);
+!              [cesd7$1] (t19);
+!              [cesd7$2] (t20); 
+!              [cesd7$3] (t21);
+              [cesd8$1] (t22);
+              [cesd8$2] (t23); 
+              [cesd8$3] (t24);
+              [cesd9$1] (t25);
+              [cesd9$2] (t26); 
+              [cesd9$3] (t27);
+              [cesd10$1] (t28);
+              [cesd10$2] (t29); 
+              [cesd10$3] (t30);
+              [cesd11$1] (t31);
+              [cesd11$2] (t32); 
+              [cesd11$3] (t33);
+              [cesd12$1] (t34);
+              [cesd12$2] (t35); 
+              [cesd12$3] (t36);
+              [cesd13$1] (t37);
+              [cesd13$2] (t38); 
+              [cesd13$3] (t39);
+              [cesd14$1] (t40);
+              [cesd14$2] (t41); 
+              [cesd14$3] (t42);
+!              [cesd15$1] (t43);
+!              [cesd15$2] (t44);
+!              [cesd15$3] (t45);
+              [cesd16$1] (t46);
+              [cesd16$2] (t47); 
+              [cesd16$3] (t48);
+              [cesd17$1] (t49);
+              [cesd17$2] (t50); 
+              [cesd18$1] (t51);
+              [cesd18$2] (t52); 
+              [cesd18$3] (t53);
+!              [cesd19$1] (t54);
+!              [cesd19$2] (t55); 
+!              [cesd19$3] (t56);
+              [cesd20$1] (t57);
+              [cesd20$2] (t58);
+              [cesd20$3] (t59);
+
+
+            cesd1-cesd6 cesd8-cesd14 cesd16-cesd18 cesd20*;
+            
+            [dep*];
+!            dep@1;
+            [pa*];
+!            pa@1;
+            [som*];
+!            som@1;
+!            [int*];
+!            int@1;
+
+
+
+MODEL Euro:            
+            dep BY cesd3@1 
+                   cesd6 (f106) 
+                   cesd9 (f109) 
+                   cesd10 (f110) 
+                   cesd14 (f114)
+                   cesd17 (f117)
+                   cesd18 (f118);
+            pa BY  cesd4@1 
+                   cesd8  (f208)
+                   cesd12 (f212)
+                   cesd16 (f21);
+            som BY cesd1@1 
+                   cesd2 (f302)
+                   cesd5 (f305)
+ !                  cesd7 (f307)
+                   cesd11 (f311)
+                   cesd13 (f313)
+                   cesd20 (f320);
+ !           int BY cesd15@1 
+ !                  cesd19 (f419);
+
+
+
+               [cesd1$1] (t1);
+              [cesd1$2] (t2);
+              [cesd1$3] (t3);
+              [cesd2$1] (t4);
+              [cesd2$2] (t5); 
+              [cesd2$3] (t6);
+              [cesd3$1] (t7);
+              [cesd3$2] (t8);
+              [cesd3$3] (t9);
+              [cesd4$1] (t10);
+              [cesd4$2] (t11);
+              [cesd4$3] (t12);
+              [cesd5$1] (t13);
+              [cesd5$2] (t14); 
+              [cesd5$3] (t15);
+              [cesd6$1] (t16);
+              [cesd6$2] (t17); 
+              [cesd6$3] (t18);
+!              [cesd7$1] (t19);
+!              [cesd7$2] (t20); 
+!              [cesd7$3] (t21);
+              [cesd8$1] (t22);
+              [cesd8$2] (t23); 
+              [cesd8$3] (t24);
+              [cesd9$1] (t25);
+              [cesd9$2] (t26); 
+              [cesd9$3] (t27);
+              [cesd10$1] (t28);
+              [cesd10$2] (t29); 
+              [cesd10$3] (t30);
+              [cesd11$1] (t31);
+              [cesd11$2] (t32); 
+              [cesd11$3] (t33);
+              [cesd12$1] (t34);
+              [cesd12$2] (t35); 
+              [cesd12$3] (t36);
+              [cesd13$1] (t37);
+              [cesd13$2] (t38); 
+              [cesd13$3] (t39);
+              [cesd14$1] (t40);
+              [cesd14$2] (t41); 
+              [cesd14$3] (t42);
+!              [cesd15$1] (t43);
+!              [cesd15$2] (t44);
+!              [cesd15$3] (t45);
+              [cesd16$1] (t46);
+              [cesd16$2] (t47); 
+              [cesd16$3] (t48);
+              [cesd17$1] (t49);
+              [cesd17$2] (t50); 
+              [cesd18$1] (t51);
+              [cesd18$2] (t52); 
+              [cesd18$3] (t53);
+!              [cesd19$1] (t54);
+!              [cesd19$2] (t55); 
+!              [cesd19$3] (t56);
+              [cesd20$1] (t57);
+              [cesd20$2] (t58);
+              [cesd20$3] (t59);
+
+
+            cesd1-cesd6 cesd8-cesd14 cesd16-cesd18 cesd20*;
+            
+            [dep*];
+!            dep@1;
+            [pa*];
+!            pa@1;
+            [som*];
+!            som@1;
+!            [int*];
+!            int@1;
+
+OUTPUT:     stdyx;
+SAVEDATA:   DIFFTEST IS Diff_3_All_Scalar.dat;
+            FILE IS fscores_3_All_Scalar.dat;
+            SAVE=FSCORES; 
